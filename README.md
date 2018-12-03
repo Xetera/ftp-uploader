@@ -3,7 +3,10 @@ Small script for automatically uploading screenshots in the clipboard to bunny c
 
 Only available for linux and maybe mac? not sure. If you're on Windows just use [ShareX](https://getsharex.com/) you don't have to mess with silly scripts like these.
 
-### Setting up
+Using uploader with flameshot:
+`flameshot gui --raw && bash ./bunny.sh -w`
+
+## Setting up
 Fill in your settings in config.sh
 
 * BUNNY_STORAGE_NAME
@@ -22,7 +25,11 @@ Fill in your settings in config.sh
   * The amount of random characters for the  file name to have. By default generates random alphanumeric, lower + capital letters. 
 
 
+## Options
+* `-v` Prints **verbose** output from curl
+* `-q` Makes output **quiet**
+* `-w` Opens the link in a new **window** or tab after uploading
+
 The redirect will be in the form of:
 
 ##### BUNNY_REDIRECT/BUNNY_UPLOAD_PATH/filename.png
-
