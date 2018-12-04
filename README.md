@@ -1,9 +1,9 @@
 # Bunny-Uploader
-Small script for automatically uploading screenshots in the clipboard to bunny CDN **Now with 🤴🥶😙🤝👳💑 support**
+Small script for automatically uploadding screenshots in the clipboard to [Bunny CDN](https://bunnycdn.com) **Now with 🤴🥶😙🤝👳💑 support**
 
 **Example**: https://i.love.hifumi.io/😫👊👵🙀👄😃.png
 
-Only available for linux and maybe mac? not sure. If you're on Windows just use [ShareX](https://getsharex.com/) you don't have to mess with silly scripts like these.
+Only available for Linux and maybe... Mac? not sure. If you're on Windows just use the almighty [ShareX](https://getsharex.com/), you don't have to mess with silly scripts like these (although ShareX still doesn't support emojis 😉).
 
 For ease of use with [flameshot](https://github.com/lupoDharkael/flameshot), bind `flameshot.sh` to a shortcut of your choice.
 
