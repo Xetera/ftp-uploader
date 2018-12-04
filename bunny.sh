@@ -15,7 +15,7 @@ out=$(xclip -o -selection clipboard -t image/png | curl -X PUT --header "Content
 
 url="$BUNNY_REDIRECT/$BUNNY_UPLOAD_PATH/$name.png"
 
-echo $url | xclip -i -selection clipboard
+echo -n $url | xclip -i -selection clipboard
 
 if [[ "$@" == *"-v"* ]]; then
   echo "$out"
