@@ -5,12 +5,15 @@ Small script for automatically uploading screenshots in the clipboard to [Bunny 
 
 Only available for Linux and maybe... Mac? not sure. If you're on Windows just use the almighty [ShareX](https://getsharex.com/), you don't have to mess with silly scripts like these (although ShareX still doesn't support emojis 😉).
 
-For ease of use with [flameshot](https://github.com/lupoDharkael/flameshot), bind `flameshot.sh` to a shortcut of your choice.
+## Setup
+1. `git clone https://github.com/Xetera/Bunny-Uploader.git`
+2. `sudo apt install xclip`
+3. `cd Bunny-Uploader`
+3. Fill in config.sh
+4. For ease of use with [flameshot](https://github.com/lupoDharkael/flameshot), bind `flameshot.sh` to a shortcut of your choice. ...or using whatever other option non-ubuntu people have. <img src="https://i.love.hifumi.io/%F0%9F%98%B8%F0%9F%91%99%F0%9F%91%85%F0%9F%99%8B%F0%9F%91%80%F0%9F%A7%B5.png" width=750> 
+5. 🎉 (I hope)
 
-### Dependencies:
-* xclip
-
-## Setting up
+## Setttings
 Fill in your settings in config.sh
 
 * BUNNY_STORAGE_NAME
