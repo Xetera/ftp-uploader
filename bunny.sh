@@ -11,9 +11,17 @@ if [[ "target image/png not available" == *"$clipboard"* ]]; then
   exit 1
 fi
 
-out=$(xclip -o -selection clipboard -t image/png | curl -X PUT --header "Content-Type: image/png" --header "AccessKey: $BUNNY_AUTH_TOKEN"  "https://storage.bunnycdn.com/$BUNNY_STORAGE_NAME/$BUNNY_UPLOAD_PATH/$name.png" -v --data-binary @- >& /dev/null)
+endpoint=""
 
-url="$BUNNY_REDIRECT/$BUNNY_UPLOAD_PATH/$name.png"
+if [[ -n "$BUNNY_UPLOAD_PATH" ]]; then
+  endpoint="$BUNNY_UPLOAD_PATH/$name.png"
+else 
+  endpoint="$name.png"
+fi
+
+out=$(xclip -o -selection clipboard -t image/png | curl -X PUT --header "Content-Type: image/png" --header "AccessKey: $BUNNY_AUTH_TOKEN"  "https://storage.bunnycdn.com/$BUNNY_STORAGE_NAME/$endpoint" -v --data-binary @- >& /dev/null)
+
+url="$BUNNY_REDIRECT/$endpoint"
 
 echo -n $url | xclip -i -selection clipboard
 
