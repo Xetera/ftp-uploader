@@ -1,6 +1,6 @@
 #!bin/bash
 
-source config.sh
+source $(dirname "$0")/config.sh
 
 name=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w $BUNNY_FILE_NAME_LENGTH | head -n 1)
 
