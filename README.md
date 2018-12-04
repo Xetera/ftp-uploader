@@ -3,8 +3,7 @@ Small script for automatically uploading screenshots in the clipboard to bunny c
 
 Only available for linux and maybe mac? not sure. If you're on Windows just use [ShareX](https://getsharex.com/) you don't have to mess with silly scripts like these.
 
-Using uploader with flameshot:
-`flameshot gui --raw && bash ./bunny.sh -w`
+For ease of use with [flameshot](https://github.com/lupoDharkael/flameshot), bind `flameshot.sh` to a shortcut of your choice.
 
 ## Setting up
 Fill in your settings in config.sh
@@ -33,3 +32,11 @@ Fill in your settings in config.sh
 The redirect will be in the form of:
 
 ##### BUNNY_REDIRECT/BUNNY_UPLOAD_PATH/filename.png
+
+## Other screenshot tools
+
+To intergrate with other screenshot tools, combine the command with:
+```sh
+screenshot-tool-here && bash $(dirname "$0")/bunny.sh
+```
+Make sure the screenshot command exits before executing the uploader. The `--raw` option for flameshot is used for this purpose as flameshot does not wait for the screenshot to be taken before exiting the command without it.
