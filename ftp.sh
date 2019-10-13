@@ -57,7 +57,7 @@ END_SCRIPT
 
 rm "$name.png"
 
-url=$(echo "$BASE_REDIRECT_URL/$upload_dir" | tr -s /)
+url="$BASE_REDIRECT_URL/${upload_dir#/}"
 
 echo -n $url | xclip -i -selection clipboard
 
