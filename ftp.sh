@@ -44,18 +44,20 @@ if [[ -z "${name}" ]]; then
 fi
 
 xclip -o -selection clipboard -t image/png -o > "$name.png"
+upload_dir=$(echo "$UPLOAD_PATH/$name.png" | tr -s /)
+echo "$upload_dir"
 
 ftp -n "$HOST" <<END_SCRIPT
   quote USER "$USERNAME"
   quote PASS "$PASSWORD"
   passive
   binary
-  put "$name.png"
+  put "$name.png" "${upload_dir#/}"
 END_SCRIPT
 
 rm "$name.png"
 
-url="$BASE_REDIRECT_URL/$name.png"
+url=$(echo "$BASE_REDIRECT_URL/$upload_dir" | tr -s /)
 
 echo -n $url | xclip -i -selection clipboard
 

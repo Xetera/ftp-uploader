@@ -30,6 +30,9 @@ Fill in your settings in config.sh
 * FILE_NAME_LENGTH
   * The amount of random characters for the  file name to have. By default generates random alphanumeric, lower + capital letters. 
 
+* UPLOAD_PATH
+	* The folder that you want the image to be uploaded to (root by default)
+
 
 ## Options
 * `-q` Makes output **quiet**
